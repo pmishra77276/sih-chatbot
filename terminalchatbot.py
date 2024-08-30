@@ -9,11 +9,11 @@ from nltk.stem import WordNetLemmatizer
 from keras.models import load_model
 
 lemmatizer = WordNetLemmatizer()
-intents = json.loads(open(r'D:\sih chatbot\intents.json').read())
+intents = json.loads(open('intents.json').read())
 
-words = pickle.load(open(r'D:\sih chatbot\words1.pkl', 'rb'))
-classes = pickle.load(open(r'D:\sih chatbot\classes1.pkl', 'rb'))
-model = load_model(r'D:\sih chatbot\models\test.h5')
+words = pickle.load(open('words1.pkl', 'rb'))
+classes = pickle.load(open('classes1.pkl', 'rb'))
+model = load_model('test1.h5')
 def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
     sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
